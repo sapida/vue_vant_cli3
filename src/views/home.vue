@@ -1,12 +1,8 @@
 <template>
     <div>
-        <lg-header :leftArrow="false" :titleType="2">
-            <template slot="tab">
-                <lg-tab :title="headTit" type="card" titleActiveColor="#fff" @tab-change="tabChange"></lg-tab>
-            </template>
-        </lg-header>
+        <lg-header :leftArrow="false" :titleType="1" title="首页"></lg-header>
         <div class="list">
-            <lg-tab :title="title" :scrollerable="true" :animated="false" @tab-change="tabChange" @on-refresh="onRefresh" @on-infinite="onInfinite">
+            <lg-tab :title="title" :scrollerable="false" :animated="true" @tab-change="tabChange" @on-refresh="onRefresh" @on-infinite="onInfinite">
                 <p v-for="i in num">{{i}}</p>
             </lg-tab>
         </div>
@@ -15,11 +11,9 @@
 </template>
 
 <script>
-import { setTimeout } from 'timers';
 export default {
     data(){
         return {
-            headTit:[{title:'标题1'},{title:'标题2'}],
             title:[
                 {id:'1',title:'标题1'},
                 {id:'2',title:'标题2'},
@@ -28,7 +22,6 @@ export default {
                 {id:'4',title:'标题5'}
             ],
             num: 20,
-            show: true,
         }
     },
     methods:{

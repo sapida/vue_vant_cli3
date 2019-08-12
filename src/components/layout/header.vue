@@ -8,13 +8,13 @@
         @click-left="onClickLeft" 
         @click-right="onClickRight"
     >
-        <div slot="title" class="slot_title">
+        <div slot="title">
             <span v-if="titleType == 1">{{title}}</span>
-            <slot v-if="titleType == 2" name="tab"></slot>
+            <slot v-else name="title_slot"></slot>
         </div>
         <div slot="right">
             <span v-if="rightType == 1">{{rightText}}</span>
-            <slot v-if="rightType == 2" name="icon"></slot>
+            <slot v-else name="right_slot"></slot>
         </div>
     </van-nav-bar>
 </template>
@@ -30,11 +30,11 @@ export default {
             type: Boolean,             
             default: true
         },
-        rightType: {                    //右侧样式,1文字，2图片(自定义)
+        rightType: {                    //右侧样式,1文字，其他自定义
             type: Number,
             default: 1
         },
-        titleType: {                   //标题样式,1文字，2tabbar(自定义)
+        titleType: {                   //标题样式,1文字，其他自定义
             type: Number,
             default: 1
         },
@@ -92,11 +92,6 @@ export default {
     .van-icon{
         font-size: 20px;
         color: #666;
-    }
-}
-.slot_title{
-    .van-tabs{
-        margin-top: 8px;
     }
 }
 </style>

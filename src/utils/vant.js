@@ -67,9 +67,9 @@ function toast(params,onClose) {
     });
 }
 
-export var vantAlert = {
+export var vantModule = {
     dialogAlert,
     dialogConfirm,
     toast
 }
-Vue.prototype.$vantAlert = vantAlert;
+Vue.prototype.$vant = vantModule;

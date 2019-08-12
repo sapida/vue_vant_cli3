@@ -4,10 +4,10 @@
         active-color="#07c160"
         @change="tabClick"
     >
-        <van-tabbar-item icon="home-o" replace to="/">标签</van-tabbar-item>
-        <van-tabbar-item icon="search" replace to="/list">标签</van-tabbar-item>
-        <van-tabbar-item icon="friends-o" replace to="/button">按钮</van-tabbar-item>
-        <van-tabbar-item icon="setting-o" replace>标签</van-tabbar-item>
+        <van-tabbar-item icon="home-o" replace>标签</van-tabbar-item>
+        <van-tabbar-item icon="search">标签</van-tabbar-item>
+        <van-tabbar-item icon="friends-o">按钮</van-tabbar-item>
+        <van-tabbar-item icon="setting-o">标签</van-tabbar-item>
     </van-tabbar>
 </template>
 
@@ -31,6 +31,7 @@ export default {
     },
     methods:{
         tabClick(key){
+            
         }
     },
 }
